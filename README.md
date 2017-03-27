@@ -1,6 +1,6 @@
 # visionkalam
 ## mini_project
-Website were students of lower classes can sibmit their ideas and get funded to them implemented.
+Website where students from economically backward backgrounds can submit their ideas and get financial support and advice for implementing them.
 ### online demo : visionkalam.inquelabs.com
 
 #### Install Help
