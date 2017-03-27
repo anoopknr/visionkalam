@@ -1,5 +1,5 @@
-# visionkalam
-## mini_project
+# Vision Kalam
+## Mini_Project
 Website where students from economically backward backgrounds can submit their ideas and get financial support and advice for implementing them.
 ### online demo : visionkalam.inquelabs.com
 
