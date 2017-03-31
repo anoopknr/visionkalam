@@ -6,9 +6,12 @@
 
         <button type="submit" style="width:auto;float: right;margin-right: 50px">Log Out</button>
     </form>
-
-    <!- Sign Up Form id02  ->
-
+    <?php
+    if($_SESSION["account_type"]=="student")
+    {
+    echo '<button onclick="window.location.href=\'new-project/\'" style="width:auto;float: right;margin-right: 50px">Post a Poject</button>';
+    }
+    ?>
 </body>
 
 </html>

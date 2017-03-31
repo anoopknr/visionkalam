@@ -9,7 +9,7 @@
 
     <div id="id01" class="modal">
 
-        <form class="modal-content animate" name="login" action="student_login.php" method="POST">
+        <form class="modal-content animate" name="login" action="login.php" method="POST">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Window">&times;</span>
             </div>
@@ -30,7 +30,7 @@
 
     <div id="id02" class="modal">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-        <form class="modal-content animate" name="signup" action="student_register.php" onsubmit="return validateSignUp()" method="POST">
+        <form class="modal-content animate" name="signup" action="register.php" onsubmit="return validateSignUp()" method="POST">
             <div class="container">
                 <label><b>Full Name</b></label>
                 <input type="text" placeholder="Enter Full Name" name="name" required>
@@ -40,8 +40,12 @@
                 <input type="password" placeholder="Enter Password" name="password" required>
                 <label><b>Repeat Password</b></label>
                 <input type="password" placeholder="Repeat Password" name="re-password" required>
+                <label><b>Account Type :</b></label>
+                <input type="radio" name="acc_type" value="1"> Contributer <input type="radio" name="acc_type" value="2" checked> Student<br>
                 <p id="error"> </p>
                 <input type="submit" value="Sign Up">
+                <br/>
+                <p> By signing up you agree our terms and conditions.</p>
             </div>
         </form>
     </div>
