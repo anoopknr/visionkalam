@@ -2,7 +2,7 @@
 	
 	// Project-creation code	
 	
-    session_start();
+    include_once ("../layout/head.php");
     // Checking login status.
     if(!isset($_SESSION["current_user"]))
     {
@@ -16,10 +16,10 @@
 ?>
 <!DOCTYPE html>
 <html> 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/project_style.css">
 <body>
-<div class="blog_post">
-<div class="blog_post-content">
+<div class="project_post">
+<div class="project_post-content">
 <form action="../include/makePost.php" method="post" enctype="multipart/form-data">
 <h2 style="text-align:center;"> Post New Project </h2>
 <br/>
@@ -46,7 +46,7 @@
       <br />
     </label>
     <input type="file" name="planImage" id="planImage" >
-    <input type="submit" value="Post Blog" name="submit">
+    <input type="submit" value="Post Project :)" name="submit">
     </p>
 </form>
 </div>

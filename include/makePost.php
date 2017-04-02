@@ -63,7 +63,7 @@ mkdir($target_dir.'/img');
 
 $writeblog=fopen($target_dir.'/index.php','w');
 
-fwrite($writeblog,'<h1>'.$U_sub.'</h1><br><h2>Explanation:</h2><br/><h3>'.nl2br($U_content).'<br/><h2>Requirement:</h2><br/>'.nl2br($U_requirement).'</h3><br/><h6> Posted by :<a href="../../student-profile/index.php?student='.$current_user.'">'.$s_User_Name.'</a></h6>');
+fwrite($writeblog,'<?php include_once ("../../layout/head.php"); ?><h1>'.$U_sub.'</h1><br><h2>Explanation:</h2><br/><h3>'.nl2br($U_content).'<br/><h2>Requirement:</h2><br/>'.nl2br($U_requirement).'</h3><br/><h6> Posted by :<a href="../../student-profile/index.php?student='.$current_user.'">'.$s_User_Name.'</a></h6>');
 if(isset($_POST["submit"])) {
 	
 	$check = getimagesize($_FILES["planImage"]["tmp_name"]);

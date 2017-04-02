@@ -1,10 +1,9 @@
 <?php
-
+include_once ("../layout/head.php");
 include_once ('../include/functions.php');
 
 // signup-student.
 
-session_start();
 if(isset($_SESSION["process_code"]))
     {
 	if($_SESSION["process_code"]=="vk_#*_stu_1")
@@ -50,7 +49,7 @@ if(isset($_SESSION["process_code"]))
 			if($result)
 			    {
 				session_start();
-				$_SESSION["current_user"] = $imagename;
+				 $_SESSION["current_user"] = $imagename;
                  $_SESSION["account_type"]= "student";
 				echo 'Account Created  <a href="index.php"> Continue </a>';
 			    }
@@ -63,10 +62,10 @@ if(isset($_SESSION["process_code"]))
             {
                 echo'
                 <html>
-                <link rel="stylesheet" href="../css/style.css">
-                <body>
-                    <div class="blog_post">
-                        <div class="blog_post-content">
+                 <link rel="stylesheet" href="../css/project_style.css">
+                 <body>
+                    <div class="project_post">
+                        <div class="project_post-content">
                             <form action="'.$_SERVER['PHP_SELF'].'" method="post" name="studentExtraDetails" id="studentExtraDetails" enctype="multipart/form-data">
                                 <h2 style="text-align:center;"> Student Registration </h2>
                                 <h4 style="text-align:center;"> Enter Additional Informations </h4>

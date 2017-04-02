@@ -3,7 +3,7 @@
 
 // signup-contributer.
 
-session_start();
+include_once ("../layout/head.php");
 if(isset($_SESSION["process_code"]))
     {
 	if($_SESSION["process_code"]=="vk_#*_con_2")
@@ -62,10 +62,10 @@ if(isset($_SESSION["process_code"]))
             {
                 echo'
                 <html>
-                <link rel="stylesheet" href="../css/style.css">
+                <link rel="stylesheet" href="../css/project_style.css">
                 <body>
-                    <div class="blog_post">
-                        <div class="blog_post-content">
+                    <div class="project_post">
+                        <div class="project_post-content">
                             <form action="'.$_SERVER['PHP_SELF'].'" method="post" name="contributerExtraDetails" id="contributerExtraDetails" enctype="multipart/form-data">
                                 <h2 style="text-align:center;"> Donater Registration </h2>
                                 <h4 style="text-align:center;"> Enter Additional Informations </h4>
