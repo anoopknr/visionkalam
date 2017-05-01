@@ -97,34 +97,18 @@ $writeblog=fopen($target_dir.'/index.php','w');
 fwrite($writeblog,'<?php 
 				    include_once ("../../layout/head.php");
 				    ?>
-					<link rel="stylesheet" href="http://localhost/vk/css/blog_style.css">
-					<div class="blog">
-					<h1 class="head">'.$U_sub.'</h1>
+					<h1 style="color: #e91e63;">'.$U_sub.'</h1>
 					<br>
-					<h2>Project Plan</h2>
-					<br/>
 					<img src="img/image.jpg" alt="Plan Image" width="800" height="500">
-					<br>
-					<h2>How It Works</h2>
-					<div class="explain">
-					'.nl2br($U_content).'
-					</div>
-<h2>Requirements</h2>
-<div class="requirement">
-'.nl2br($U_requirement).'
-</div>
-					 </div>
-					 <div class="feeds">
-						 <div class="feedblock" style="background :#D8D1C9; border:none;">
-						<h4 >Posted by  <a href="../../student-profile/index.php?student='.$current_user.'">'.$s_User_Name.'</a>
-						</br>
-						<i>Student</i>
-						</br></br>
-						<l>'.date('jS F Y h:i:s A').'<l>
-						</h4>
-						<img style="display: table-cell;vertical-align: middle;padding :7px;  width : 90px;  height : 90px;" src="../../avatars/'.$current_user.'.jpg"></img>
-						 </div>
-						   <?php
+					<br/>
+					<h2>Explanation</h2>
+					<br/>
+					<h3>'.nl2br($U_content).'<br/>
+					<h2>Requirements</h2>
+					<br/>'.nl2br($U_requirement).'</h3>
+					<br/>
+					<h6> Posted by :<a href="../../student-profile/index.php?student='.$current_user.'">'.$s_User_Name.'</a></h6>
+				    <?php
  				    include_once ("../../include/config.php");  
  				    $Post_token='.$Post_Token.';
  				    $result = mysqli_query($conn,"UPDATE `Post_DB` SET `post_views` = `post_views`+1 WHERE `Post_DB`.`post_id` = ".$Post_token);
@@ -135,33 +119,14 @@ fwrite($writeblog,'<?php
 					 {
      				 	 if($_SESSION["account_type"]=="donater")
     				 		 {
-							 echo "<div class=\'feedblock\'>";
         					 echo "<link rel=\'stylesheet\' href=\'../../css/project_style.css\'>";
-        					 echo "<form class=\'modal-content\' name=\'donation\' action=\'http://localhost/vk/make-donation\' method=\'POST\'>";
+        					 echo "<form class=\'modal-content animate\' name=\'donation\' action=\'http://localhost/vk/make-donation\' method=\'POST\'>";
         					 $_SESSION["post_id"]=$Post_token;
-        					 echo "<input type=\'submit\' value=\'Donate Now\' style=\'width : 80%;\' name=\'submit\'></form> </div>";
+        					 echo "<input type=\'submit\' value=\'Donate Now\' style=\'width : 50%;\' name=\'submit\'></form>";
     						 }
- 				    }
-					 if($Lock==2)
-					 {
-					$donaterDetails=mysqli_query($conn,"SELECT contributer_name,contributer_job,contributer_unique_id FROM Contributer_DB WHERE contributer_id IN (SELECT contributer_id FROM Donated_Projects_DB WHERE post_id=$Post_token)");
-					$donater=mysqli_fetch_array($donaterDetails);
-					$getDate=mysqli_query($conn,"SELECT donation_date FROM Donated_Projects_DB WHERE post_id=$Post_token ");
-					$date=mysqli_fetch_array($getDate);
-					echo"	 
-						<div class=\'feedblock\' style=\'background :#D8D1C9; border:none;\'>
-						<h4 >Donated by  <a href=\'../../donater-profile/index.php?donater=".$donater["contributer_unique_id"]."\'>".$donater["contributer_name"]."</a>
-						</br>
-						<i>".$donater["contributer_job"]."</i>
-						</br></br>
-						<l>".$date["donation_date"]."<l>
-						</h4>
-						<img style=\'display: table-cell;vertical-align: middle;padding :7px;  width : 90px;  height : 90px;\' src=\'../../avatars/".$donater["contributer_unique_id"].".jpg\'></img>
-						 </div>";
-					 }
-					 ?>
-				</div>
-');
+ 						 }
+					include_once ("../../layout/footer.php");
+					 ?>');
 fclose($writeblog);
 header("location: ".$target_dir);
 

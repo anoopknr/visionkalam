@@ -1,0 +1,47 @@
+.user {
+    background: linear-gradient(to left, #0073BB, #4DD3D0);
+    height: auto;
+    padding-top: 50px;
+    margin: 20px 10px;
+    border-radius: 3px;
+    border: 1px solid #dedede;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+}
+
+.user_avatar {
+    overflow: hidden;
+    align-content: center;
+    display: block;
+    border-radius: 50%;
+    z-index: 2;
+    margin: -24px auto 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.user_avatar img {
+    width: 72px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    height: 72px;
+    background-clip: content-box;
+    box-sizing: border-box;
+}
+
+.user_name {
+    padding-top: 25px;
+    font-size: 20px;
+    line-height: 30px;
+    vertical-align: baseline;
+    text-transform: uppercase;
+    color: #61878a;
+    text-align: center;
+}
+
+.user_text {
+    margin: -50px 0px 0px 0px;
+    height: auto;
+    padding-bottom: 1px;
+    background: #FFFFFF;
+    height: auto;
+}

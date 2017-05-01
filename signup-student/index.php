@@ -36,8 +36,7 @@ if(isset($_SESSION["process_code"]))
             $student_school_address = validate_input($student_school_address);
 			//          Resetting session
 			    session_unset();
-			// 			destroy the session
-			    session_destroy();
+			
 			
             if ($_FILES["profile_avatar"]["size"] < 700000)
             {
@@ -48,7 +47,6 @@ if(isset($_SESSION["process_code"]))
 			$result=mysqli_query($conn,$sql);
 			if($result)
 			    {
-				session_start();
 				 $_SESSION["current_user"] = $imagename;
                  $_SESSION["account_type"]= "student";
 				echo 'Account Created  <a href="index.php"> Continue </a>';
@@ -78,7 +76,7 @@ if(isset($_SESSION["process_code"]))
                                 </p>
                                 <p>
                                     <label for="pin"> <b> School Pin Code : </b> </label>
-                                    <input type="number" name="pin">
+                                    <input type="number" min="100000" name="pin" required>
                                 </p>
                                 <p>
                                     <label for="yob"><b> Your Year of birth :</b> </label>
@@ -88,11 +86,11 @@ if(isset($_SESSION["process_code"]))
                                 </p>
                                 <p>
                                     <label for="content"><b>Select Profile Pic ( jpg image) :<b/><br /></label>
-                                    <input type="file" name="profile_avatar" id="profile_avatar"  >
+                                    <input type="file" name="profile_avatar" id="profile_avatar" required>
                                 </p>
                                 <p>
                                      <label for="schoolAddress"><b>School Address <b style="color:red;"> *** <b/> <b/>   </label>
-                                    <textarea name="schoolAddress" id="schoolAddress" style="width:100%;" rows="6" placeholder="Enter Mailing Adress of School"></textarea>
+                                    <textarea name="schoolAddress" id="schoolAddress" style="width:100%;" rows="6" placeholder="Enter Mailing Adress of School" required></textarea>
                                 </p>
                                 <p>
                                     *** Very Important because Project support and other verifications are done through Your School.

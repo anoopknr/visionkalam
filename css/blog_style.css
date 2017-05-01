@@ -1,0 +1,82 @@
+h1,
+h2 {
+    text-align: center;
+}
+
+.head {
+    color: #000;
+}
+
+div.feedblock {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+    background-color: #F1F8EE;
+    border: 1px solid #dedede;
+    width: 99%;
+    padding: 5px;
+    margin-top: 25px;
+}
+
+.feedblock h4 {
+    float: left;
+    margin-left: 20px;
+    color: #7C3E2C;
+}
+
+.feedblock a {
+    color: #C61931;
+}
+
+.feedblock l,
+i {
+    font-weight: 300;
+}
+
+div.feeds {
+    width: 28%;
+    display: block;
+    /*background-color:red;*/
+    float: right;
+    margin-right: 1%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div.blog {
+    width: 68%;
+    display: block;
+    background-color: #F3F3F3;
+    float: left;
+    margin-left: 1%;
+    border: 1px solid #dedede;
+    margin-top: 25px;
+    padding: 5px 0px 10px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div.requirement {
+    text-align: center;
+    word-wrap: break-word;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 24px;
+    background-color: #E8EEF1;
+    border: 1px solid #3A6C7E;
+    border-radius: 4px;
+    margin: 0px 50px;
+    padding: 15px;
+}
+
+div.explain {
+    text-align: left;
+    word-wrap: break-word;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 24px;
+    background-color: #EEEEEE;
+    border: 1px solid #AAAAAA;
+    border-radius: 4px;
+    margin: 0px 50px;
+    padding: 15px;
+}

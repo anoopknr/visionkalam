@@ -32,7 +32,6 @@
             echo '
                     <a href="http://localhost/vk" class="vk_menu_list">Home</a>
                     <a href="#howItWorks" class="vk_menu_list">How It Works</a>
-                    <a href="#aboutUs" class="vk_menu_list">About</a> 
                     <a onclick="document.getElementById(\'login_form\').style.display=\'block\'" class="vk_menu_list" style="float: right; margin-right: 50px">Login</a>
                     <a onclick="document.getElementById(\'sign_up_form\').style.display=\'block\'" class="vk_menu_list" style="float: right; margin-right: 50px">Sign Up</a>
                 ';
@@ -44,12 +43,18 @@
             echo '
                     <a href="http://localhost/vk" class="vk_menu_list">Home</a>
                     <a href="#howItWorks" class="vk_menu_list">How It Works</a>
-                    <a href="#aboutUs" class="vk_menu_list">About</a>
                     <a href="http://localhost/vk/'.$type.'-profile/index.php?'.$type.'='. $user.'" class="vk_menu_list" > My Profile </a> 
                  ';
              if($_SESSION["account_type"]=="student")
              {
                 echo '<a href="http://localhost/vk/new-project/" class="vk_menu_list">Post a Poject</a>';
+                echo '<a href="http://localhost/vk/'.$type.'-activites/index.php?'.$type.'='. $user.'" class="vk_menu_list" > My Activites </a> ';
+                echo '<a href="http://localhost/vk/questions/index.php?student_id='. $user.'" class="vk_menu_list" > Answers </a> ';
+             }
+             if($_SESSION["account_type"]=="donater")
+             {
+                echo '<a href="http://localhost/vk/'.$type.'-activites/index.php?'.$type.'='. $user.'" class="vk_menu_list" > My Activites </a> ';
+                echo '<a href="http://localhost/vk/give-answers/index.php?'.$type.'='. $user.'" class="vk_menu_list" id=answersNav > Questions </a> ';
              }
             echo '
                     <a href="http://localhost/vk/include/logout.php" class="vk_menu_list" style="float: right; margin-right: 50px">Log Out</a>
@@ -78,6 +83,7 @@
                             <input type="email" placeholder="Enter Email ID" name="email" id="email" required>
                             <label><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="password" id="password" required>
+                            <p id="login_error"></p>
                             <button type="submit">Login</button>
                         </div>
                     </form>
@@ -96,12 +102,12 @@
                                 <label><b>Email</b></label>
                                 <input type="email" placeholder="Enter Email" name="email" required>
                                 <label><b>Password</b></label>
-                                <input type="password" placeholder="Enter Password" name="password" required>
+                                <input type="password" placeholder="Enter Password" name="password" maxlength="80" minlength="3"  required>
                                 <label><b>Repeat Password</b></label>
                                 <input type="password" placeholder="Repeat Password" name="re-password" required>
-                                <label><b>Account Type :</b></label>
-                                <input type="radio" name="acc_type" value="1"> Contributer <input type="radio" name="acc_type" value="2" checked> Student<br>
                                 <p id="error"> </p>
+                                <label><b>Account Type :</b></label>
+                                <input type="radio" name="acc_type" value="1" onfocus="validateSignUp()"> Contributer <input type="radio" name="acc_type" value="2" onfocus="validateSignUp()" checked> Student<br>
                                 <button type="submit">Sign Up</button>
                                 <br/>
                                 <p> By signing up you agree our terms and conditions.</p>
@@ -120,6 +126,10 @@
                             document.getElementById("error").style.color = "RED";
                             return false;
                         }
+                        else
+                        {
+                            document.getElementById("error").innerHTML = " ";
+                        }
                     }
                   // Get the form
                     var login = document.getElementById(\'login_form\');
@@ -132,9 +142,45 @@
                              signup.style.display = "none";
                           }
                       }       
+
                     </script>
                 ';
     }
+    if(isset($_SESSION['error']))
+    {
+		if($_SESSION['error']==1)
+		{
+			echo "
+			<script>
+			alert('Login or Password Error !');
+			</script>";
+			$_SESSION['error']=0;
+		}
+        if($_SESSION['error']==2)
+		{
+			echo "
+			<script>
+			alert('E-Mail ID already Here !');
+			</script>";
+			$_SESSION['error']=0;
+		}
+        if($_SESSION['error']==4)
+		{
+			echo "
+			<script>
+			alert('Password Changed !');
+			</script>";
+			$_SESSION['error']=0;
+		}
+        if($_SESSION['error']==5)
+		{
+			echo "
+			<script>
+			alert('Old Password Was Wrong !');
+			</script>";
+			$_SESSION['error']=0;
+		}
+	}
 ?>
 </body>
 

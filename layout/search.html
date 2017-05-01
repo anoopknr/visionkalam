@@ -1,0 +1,52 @@
+<head>
+    <script>
+        function showResult(str) {
+            if (str.length == 0) {
+                document.getElementById("search").innerHTML = "";
+                document.getElementById("search").style.border = "0px";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("search").innerHTML = this.responseText;
+                    document.getElementById("search").style.border = "1px solid #D2D2D2";
+                }
+            }
+            xmlhttp.open("GET", "include/search.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+
+<body>
+    <style>
+        .search {
+            word-wrap: break-word;
+            padding: 5px;
+            font: 20px arial, sans-serif;
+            font-weight: bold;
+            line-height: 38px;
+            list-style-type: none;
+            color: #222;
+            position: relative;
+            display: block;
+            margin: 0px;
+        }
+        
+        input:focus {
+            border-color: #4d90fe;
+        }
+    </style>
+
+    <form>
+        <input type="text" size="30" style="width:85%;" placeholder="Search Projects" onkeyup="showResult(this.value)">
+        <img style="height:30px;width:30px;" src="images/search.png" />
+        <div id="search" style="text-align:left;width:81%;display: inline-block;"></div>
+    </form>
+
+</body>
+
+</html>

@@ -25,12 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+ <link rel="stylesheet" href="http://localhost/vk/css/admin_style.css">
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<div id="page">
+
+<div class="container">
     <!-- [banner] -->
     <header id="banner">
         <hgroup>
@@ -38,6 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </hgroup>        
     </header>
     <!-- [content] -->
+        <div class="form-style-5">
     <section id="content">
         <form id="login" method="post">
             <label for="username">Username:</label>
@@ -47,7 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br />
             <input type="submit" value="Login">
         </form>
+
     </section>
+</div>
 </div>
 <!-- [/page] -->
 </body>

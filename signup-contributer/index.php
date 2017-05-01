@@ -35,8 +35,7 @@ if(isset($_SESSION["process_code"]))
 
 			//          Resetting session
 			    session_unset();
-			// 			destroy the session
-			    session_destroy();
+
 			
             if ($_FILES["profile_avatar"]["size"] < 700000)
             {
@@ -47,7 +46,6 @@ if(isset($_SESSION["process_code"]))
 			$result=mysqli_query($conn,$sql);
 			if($result)
 			    {
-				session_start();
 				$_SESSION["current_user"] = $imagename;
                 $_SESSION["account_type"]= "donater";
 				echo 'Account Created  <a href="index.php"> Continue </a>';

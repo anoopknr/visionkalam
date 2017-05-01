@@ -1,0 +1,19 @@
+.banner-image {
+    height: 350px;
+    overflow: hidden;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%
+}
+
+footer {
+    display: block;
+    background: #333;
+    color: #dadada;
+    text-align: center;
+    padding: 15px;
+    line-height: 1.6;
+    margin-top: 12px;
+}

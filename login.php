@@ -43,10 +43,10 @@ else if($donater_count==1){
 	header("location:index.php");
 }
 else {
-	echo "Wrong Username or Password";
 	session_start();
 	session_unset();
-	// 	destroy the session
-	session_destroy();
+	$_SESSION['error']=1;
+	header("Location:index.php");
+
 }
 ?>
