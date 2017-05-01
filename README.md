@@ -4,7 +4,7 @@ Website where students from economically backward backgrounds can submit their p
 
 #### Install Help
 Create Database vision_kalam and get the SQL commands from vision_kalam.sql.   
-\nCurrently works only on localhost/vk directory.  
+Currently works only on localhost/vk directory.  
 Edit include/config.php and set your MySQL username and password.  
 
 ### Features
