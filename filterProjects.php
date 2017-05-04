@@ -102,7 +102,7 @@
 <?php
     
 // Including Files.
-echo '<div class="blocks">';
+echo '<div class="blocks" style="padding-bottom:0px;">';
 include('layout/search.html');
 
 echo '</div> <div class="blocks" >';
